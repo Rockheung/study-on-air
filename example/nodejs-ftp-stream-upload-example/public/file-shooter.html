@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple File Stream Uploader to FTP</title>
+</head>
+<body>
+  <div>Hello</div>
+  <form id="large-file-submit" method="POST" enctype="multipart/form-data" target="'/file">
+    <input name="large-file" type="file" >
+    <button>Upload!</button>
+  </form>
+  <script>
+    var form = document.querySelector('#large-file-submit');
+    form.addEventListener('submit',function (e) {
+      // e.preventDefault();
+      if (e.target.children[0].files.length === 0) {
+        console.log('Empty files')
+        return false
+      }
+      console.log('Submit');
+    })
+  </script>
+</body>
+</html>
