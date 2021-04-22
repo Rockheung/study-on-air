@@ -19,7 +19,7 @@ app.get("/file", (req: Request, res: Response) => {
 });
 
 app.post("/file", (req: Request, res: Response) => {
-  console.log(req.readable);
+  console.log(JSON.stringify(req.headers, null, 2));
   res.status(201).send("Ok");
 });
 
